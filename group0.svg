@@ -1,0 +1,23 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Left branch of the Y -->
+  <path d="M10 0C10 7 0 14 0 20C0 26 5 30 10 30C15 30 20 25 20 20C20 14 10 7 10 0Z" fill="url(#paint0_linear_1_1528)"/>
+  <!-- Right branch of the Y -->
+  <path d="M30 0C30 7 40 14 40 20C40 26 35 30 30 30C25 30 20 25 20 20C20 14 30 7 30 0Z" fill="url(#paint1_linear_1_1528)"/>
+  <!-- Stem of the Y (much longer and thicker) -->
+  <path d="M20 20C20 35 12 40 12 40H28C28 40 20 35 20 20Z" fill="url(#paint2_linear_1_1528)"/>
+  
+  <defs>
+    <linearGradient id="paint0_linear_1_1528" x1="0" y1="10" x2="10" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7A87FB"/>
+      <stop offset="1" stop-color="#FFD49C"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_1_1528" x1="30" y1="10" x2="40" y2="10" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7A87FB"/>
+      <stop offset="1" stop-color="#FFD49C"/>
+    </linearGradient>
+    <linearGradient id="paint2_linear_1_1528" x1="20" y1="20" x2="20" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7A87FB"/>
+      <stop offset="1" stop-color="#FFD49C"/>
+    </linearGradient>
+  </defs>
+</svg>
