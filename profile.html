@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yagika - Full Stack Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Iansui&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Iansui&family=Rock+Salt&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Iansui&family=Rock+Salt&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap" rel="stylesheet">
+
+
+  <style>
+    /* General Styles */
+/* General Styles */
+body {
+  font-family: "Iansui", cursive;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #020711;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+/* Header Section */
+header {
+  background-color: #101826;
+  color: #fff;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow for consistency */
+}
+
+.profile-pic {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 25px;
+  border: 5px solid #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease-in-out; /* Smooth transition */
+  z-index: 2;
+}
+
+.profile-pic:hover {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.8), /* Main glow */
+              0 0 40px rgba(0, 123, 255, 0.6), 
+              0 0 60px rgba(0, 123, 255, 0.4); /* Layered glow effect */
+}
+
+h1{
+  font-family: "Rock Salt", cursive;
+  font-weight: 600;
+  font-style: normal;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.8em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+header p {
+  font-size: 1.3em;
+  margin-top: 15px;
+  font-weight: 500;
+}
+.social-icons {
+        margin-top: 10px;
+    }
+    .social-icons a {
+        margin: 0 10px;
+        font-size: 1.8rem;
+        color: #007bff;
+        transition: color 0.3s;
+    }
+    .social-icons a:hover {
+        
+        color: #333;
+    }
+/* Wave Effect */
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 150' preserveAspectRatio='none'%3E%3Cpath d='M0,100 C150,100 350,0 500,100 L500,0 L0,0 Z' style='stroke: none; fill: #020711;'%3E%3C/path%3E%3C/svg%3E");
+  background-size: 100% 100%;
+  z-index: 1;
+}
+
+/* Navigation */
+nav {
+  background-color: #020711;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  color: #a0a0a0;
+  margin: 0 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+.container {
+  max-width: 70%;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #101826;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+  grid-gap: 30px;
+}
+
+/* Cards */
+.card {
+  background-color: #020711;
+  border-radius: 10px;
+  padding: 35px;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Headings */
+h2 {
+  color: #fff;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+  font-size: 2em;
+  text-align: center;
+  font-family: "Bungee Shade", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Text and Lists */
+p, ul, li {
+  color: #c0c0c0;
+  line-height: 1.7;
+  list-style-type: none;
+
+}
+
+/* Links */
+a {
+  color: #4a90e2;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+}
+
+a:hover {
+  color: #63a4ff;
+}
+
+/* Skills Icons */
+.skills-icon {
+  font-size: 2.2em;
+  margin-right: 12px;
+  color: #808080;
+  transition: color 0.3s ease;
+}
+
+.card li:hover .skills-icon {
+  color: #fff;
+}
+
+/* Experience List Items */
+.experience li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Testimonials */
+.testimonial-quote {
+  font-style: italic;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.testimonial-author {
+  text-align: right;
+  color: #a0a0a0;
+  font-weight: 500;
+}
+
+/* Projects */
+.project {
+  margin-bottom: 20px;
+}
+
+.project h3 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.project p {
+  margin: 0;
+}
+
+.project table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.project th, .project td {
+  border: 1px solid #333;
+  padding: 12px;
+  text-align: left;
+}
+
+.project th {
+  background-color: #1a202c;
+  color: #fff;
+  font-weight: 500;
+}
+/* Mouse Glow Effect */
+.mouse-glow {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 123, 255, 0.4);
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.8), 
+              0 0 40px rgba(0, 123, 255, 0.6), 
+              0 0 60px rgba(0, 123, 255, 0.4);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: blur(15px);
+  transition: transform 0.05s ease-out;
+  z-index: 9999;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 25px 0;
+  background-color: #101826;
+  color: #fff;
+  margin-top: 30px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Inner Boxes */
+.card .about-me p, .card .skills ul li, .card .experience ul li, .card .project, .card .testimonial {
+  background-color: #1a202c;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card .about-me p:last-of-type, .card .skills ul li:last-of-type, .card .experience ul li:last-of-type, .card .project:last-of-type, .card .testimonial:last-of-type {
+  margin-bottom: 0;
+}
+
+
+.skills-icons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  text-align: center;
+  font-size: 24px;
+}
+
+.skill i {
+  font-size: 40px;
+  color: #333;
+}
+
+.skill p {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.card {
+  border: 0.1rem solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <script>
+      // Create the glow element
+      const glow = document.createElement("div");
+      glow.classList.add("mouse-glow");
+      document.body.appendChild(glow);
+    
+      // Track mouse movement
+      document.addEventListener("mousemove", (e) => {
+        glow.style.left = `${e.clientX}px`;
+        glow.style.top = `${e.clientY}px`;
+      });
+    
+      // Optional: Hide the glow when the mouse leaves the window
+      document.addEventListener("mouseleave", () => {
+        glow.style.opacity = "0";
+      });
+    
+      document.addEventListener("mouseenter", () => {
+        glow.style.opacity = "1";
+      });
+    </script>
+    
+    <img class="profile-pic" src="your-profile-picture.png" alt="Profile Picture">
+    <h1>Hi, I'm Asasntha Yagika Silva</h1>
+    <p >
+      Undergraduate Software Engineering Student
+    </p>
+    
+    <a href="https://deepsrilanka.com" target="_blank"  style="font-size: 1.4rem; font-style: italic;font-weight: 600; ">YAGI Influx Solutions</a>
+    <div class="social-icons">
+        <a href="www.linkedin.com/in/yagika-silva-b1b6ab254 " target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/yagikasilva" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.facebook.com/share/15Z5mTWaDi/" target="_blank">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/silva2001yagi_?igsh=Z25leG04aDFnaWps" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <div class="wave"></div>
+</header>
+  <div class="container">
+    <div class="card">
+      <section id="experience" class="experience">
+        <h2>Experience</h2>
+        <div class="project">
+            <strong>K&D Management Pvt (Ltd) - Data Assistant</strong><br>
+            <em>April 2023 - Present</em><br><br>
+            K&D Management Pvt Ltd is a recovery agency specializing in bank debtor management, call centers, and credit
+            card campaigns. I handles quality monitoring, data analysis, website management for K&D Foods, petty cash,
+            and IT problem-solving to ensure smooth operations and effective service delivery.
+          </div>
+
+          <div class="project">
+            <strong>YAGI Inlux Solutions - Freelancer | Owner</strong><br>
+            <em>October 2024 - Present</em><br><br>
+            I am currently working as a freelancer at YAGI Influx Solutions, where I provide innovative web design and
+            development services. As the founder of YAGI Influx Solutions, I focus on delivering tailored digital
+            solutions, including website creation, business branding, and online presence enhancement. My goal is to
+            help businesses grow by providing creative, functional, and results-driven web solutions.
+          </div>
+          <div class="project">
+            <strong>Contrinex Ceylon - Quality Operator</strong><br>
+            <em>May 2022 - February 2023</em><br><br>
+            As part of my work experience at Contrinex Ceylon, I contributed to the development of smart sensors for
+            automation and smart factories. My role involved documenting and monitoring quality results, conducting
+            in-process and final product inspections, and providing feedback for quality control improvements.
+            Additionally, I ensured compliance with safety regulations and procedures, helping maintain high standards
+            of safety and efficiency in the workplace.</div>
+      </section>
+
+      <section id="testimonials" class="testimonials">
+        <h2>Education</h2>
+        <div class="testimonial">
+          <p >I am an academically accomplished individual with a strong foundation in the arts, having achieved 3 A’s and 1B’s 
+            in my Advanced Level examinations. Currently, I am in my third year of pursuing a Bachelor’s degree in Software 
+            Engineering at<b> <i>OPEN UNIVERSITY OF SRI LANKA</i></b> , where I am honing my technical skills and knowledge.</p>
+          <p class="testimonial-author">Asantha Yagika Silva | <b>OUSL</b></p>
+        </div>
+      </section>
+    </div>
+
+    <div class="card">
+      <section id="projects" class="projects">
+        <h2>Projects</h2>
+    
+        <div class="project">
+          <h3>Data Entry System</h3>
+          <p>I’ve developed an advanced database system in Python, utilizing Excel as the backend with openpyxl for
+            efficient data management. The system boasts a custom Tkinter user interface, offering a seamless and
+            visually appealing user experience for managing and interacting with the data.</p>
+          <table>
+            <tr>
+              <th>Python</th>
+              <th>Excel</th>
+              <th>Tkinter</th>
+              <th>Openpyxl</th>
+            </tr>
+          </table><br>
+          <p><strong>Link:</strong>
+            <a href="https://github.com/yagikasilva/Database_System" target="_blank">
+              GitHub Repository
+            </a>
+          </p>
+        </div>
+    
+        <div class="project">
+          <h3>Freelance Web Developer</h3>
+          <p>As a freelancer, I've designed and launched websites for two businesses using WordPress:</p>
+          <ul>
+            <li><strong><a href="https://deepsrilanka.com" target="_blank">DeepSriLanka.com</a>:</strong> A travel agency site showcasing Sri Lanka's beauty.</li>
+            <li><strong><a href="https://kndfoods.com" target="_blank">KndFoods.com</a>:</strong> A vibrant vegan food website with an online store.</li>
+            <li><strong><a href="https://fairyeducational.com/" target="_blank">Fairyeducational.com</a>:</strong> An online book store and a Nursery website. </li>
+          </ul>
+          <table>
+            <tr>
+              <th>WordPress</th>
+            </tr>
+          </table>
+
+        </div>
+    
+        <div class="project">
+          <h3>ATM Application</h3>
+          <p>I recently launched an innovative ATM application developed using Python and Tkinter. It features a
+            user-friendly interface for balance inquiries, withdrawals, and deposits, with security ensured through a PIN number feature.</p>
+          <table>
+            <tr>
+              <th>Python</th>
+              <th>Tkinter</th>
+            </tr>
+          </table><br>
+          <p><strong>Link:</strong>
+            <a href="https://github.com/yagikasilva/ATM_App" target="_blank">
+              GitHub Repository
+            </a>
+          </p>
+        </div>
+    
+        <div class="project">
+          <h3>Recovery App</h3>
+          <p>I have completed a fully functional Android application for the recovery sector, designed to optimize debt
+            management workflows. This application utilizes Firebase as the database solution.</p>
+          <table>
+            <tr>
+              <th>Java</th>
+              <th>Firebase</th>
+            </tr>
+          </table><br>
+          <p><strong>Link:</strong>
+            <a href="https://drive.google.com/drive/folders/1zWffzp1hrN2WGWnInObiT2wdMCpzW0_t" target="_blank">
+              Repository
+            </a>
+          </p>
+        </div>
+      </section>
+    </div>
+    
+
+
+    
+
+    <div class="card">
+
+
+      <section id="contact" class="contact">
+        <h2>Certificates</h2>
+        <div class="project">
+          <strong>University of Moratuwa on "Web Design for Beginners”</strong><br>
+          <em>Verification Code: jWpD2nA6Sj</em><br><br>
+          E-Certificate Verification Url: <a href="https://open.uom.lk/verify">https://open.uom.lk/verify</a></div>
+
+          <div class="project">
+            <strong>The University of Moratuwa on “Python for Beginners”</strong><br>
+            <em>Verification Code: XID8V7NSRW</em><br><br>
+            E-Certificate Verification Url: <a href=" https://open.uom.lk/verify"> https://open.uom.lk/verify</a></div>
+
+            <div class="project">
+              <strong>Microsoft Learn Student Ambassador</strong><br><br>
+              E-Certificate Verification Url: <a href=" https://cert.devtown.in/verify/1KcobT"> https://cert.devtown.in/verify/1KcobT</a></div>
+
+              <div class="project">
+                <strong>For completing a 7-day FREE Bootcamp on Tinder Clone using HTML & CSS - February 2023</strong><br><br>
+                E-Certificate Verification Url: <a href="  https://cert.devtown.in/verify/Z1VOumo">  https://cert.devtown.in/verify/Z1VOumo </a></div>
+
+                <div class="project">
+                  <strong>Developer Student Clubs</strong><br><br>
+                  E-Certificate Verification Url: <a href=" https://cert.devtown.in/verify/ZDkl4h"> https://cert.devtown.in/verify/ZDkl4h</a></div>
+
+                  <div class="project">
+                    <strong>Certificate on SQL by SOLOLEARN</strong><br><br>
+                    E-Certificate Verification Url: <a href=" https://www.sololearn.com/certificates/CC-5GC84DN4">https://www.sololearn.com/certificates/CC-5GC84DN4</a></div>
+      </section>
+    </div>
+
+    <div class="card">
+      <!-- Contact Section -->
+      <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <div class="skills-icons">
+          <div class="skill">
+            <i class="fab fa-html5" style="color: #E34F26;"></i>
+            <p>HTML5</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-css3-alt" style="color: #1572B6;"></i>
+            <p>CSS3</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-js" style="color: #F7DF1E;"></i>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-python" style="color: #3776AB;"></i>
+            <p>Python</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-database" style="color: #00758F;"></i>
+            <p>SQL</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-java" style="color: #fa770d;"></i>
+            <p>Java</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-code" style="color: #A8B9CC;"></i>
+            <p>C</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-wordpress" style="color: #21759B;"></i>
+            <p>WordPress</p>
+          </div>
+          <div class="skill">
+            <i class="fab fa-figma" style="color: #F24E1E;"></i>
+            <p>Figma</p>
+          </div>
+          <div class="skill">
+            <i class="fas fa-fire" style="color: #FFCA28;"></i>
+            <p>Firebase</p>
+          </div>
+          <div class="skill">
+            <i class="fa-solid fa-terminal" style="color: #31A8FF;"></i>
+            <p>Terminal</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Get in touch</h2>
+        <p>What’s next? Feel free to reach out to me if you’re looking for a developer, have a query, or simply want to
+          connect.</p>
+        <ul>
+          <li><i class="fas fa-envelope"></i> yagikasilva2001@gmail.com</li>
+          <li><i class="fas fa-phone"></i> +94 750348396</li>
+          <li><i class="fas fa-globe"></i> You may also find me on these platforms!</li>
+          
+        </ul>
+        <div class="social-icons" style="display: flex; justify-content: center; gap: 0rem;">
+          <a href="https://www.linkedin.com/in/yagika-silva-b1b6ab254" target="_blank">
+              <i class="fab fa-linkedin" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="https://github.com/yagikasilva" target="_blank">
+              <i class="fab fa-github" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="https://www.facebook.com/share/15Z5mTWaDi/" target="_blank">
+              <i class="fab fa-facebook" style="font-size: 1.5rem;"></i>
+          </a>
+          <a href="https://www.instagram.com/silva2001yagi_?igsh=Z25leG04aDFnaWps" target="_blank">
+              <i class="fab fa-instagram" style="font-size: 1.5rem;"></i>
+          </a>
+      </div>
+      <section id="contact" class="contact">
+        <h2> </h2>
+        <p style="font-family: 'Sedgwick Ave Display','cursive'; font-size: 1.9rem; text-align: center;font-weight: 100;">"Programming is 1% writing code and 99% making it work... but I do both like a pro!" 💪💻</p>
+      </div>
+      
+        
+      </div>
+      
+      </section>
+      
+
+      <!-- Skills Section -->
+
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 YAGI Influx Solutions. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
